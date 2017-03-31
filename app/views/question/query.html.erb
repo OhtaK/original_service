@@ -1,6 +1,16 @@
 <h1></h1>
 <p>
     制限時間：<%= @time%>
-    <%= @word.eng%>
-    </p>
     
+    </p>
+    <%= @question.eng%>
+    <%= @question.jap%>
+    <% if !@question.reply?%>
+     <%= @question.reply%>
+    <% end %>
+    
+<%#= form_for(@word) do |f| %>
+  答え:
+  <%#= f.text_field :jap %>
+  <%#= f.submit %>
+<%# end %>
