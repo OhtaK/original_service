@@ -1,18 +1,21 @@
-英語に直しなさい<br/>
-<%= @question.jap%>
-
+<link rel="stylesheet" href="top.scss">
+<div class="center">
+  <div class="question_japanese">
+    英語に直しなさい<br/>
+  </div>
+  <div class="question_english">
+    <%= @question.jap%>
+  </div>
 <%= form_for(@question) do |f| %>
   答え:
   <%= f.text_field :reply %>
   <%= f.submit %>
 <% end %>
 
-<body onLoad="countdown();">
-  <div id="target">時間表示領域</div>
-</body>
-
-問題ID：<%=session[:id]%>
-点数：<%=session[:score]%>
+  <body onLoad="countdown();">
+    <div id="target">時間表示領域</div>
+  </body>
+</div>
 
 <script>
 var count=10;
@@ -25,6 +28,4 @@ var count=10;
     }
     window.setTimeout(countdown, 1000);
 }
-
-
 </script>

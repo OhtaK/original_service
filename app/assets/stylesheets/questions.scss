@@ -1,3 +1,29 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.question_japanese{
+    font-size: 1em;
+}
+.question_english {
+      font-size: 2em;
+    }
+    
+.center{
+  text-align: center;
+}
+
+.button{
+    width:200px;
+    font-size:24px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    padding:8px 0 10px;
+    text-align:center;
+    box-shadow:2px 2px #555;
+    color:#333;
+    color:#fff;
+    background-color:#49a9d4;
+    border-radius:10px;
+}

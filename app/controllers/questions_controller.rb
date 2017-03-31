@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
   include QuestionsHelper
   
   def index
-    session[:time]=10
     session[:id]=1
     session[:score]=0
   end
@@ -14,20 +13,20 @@ class QuestionsController < ApplicationController
   def update
     @question=Question.find(params[:id]=session[:id])
     @reply=question_params[:reply]
+    
     #binding.pry
     if @reply==@question.eng
       session[:score]=session[:score]+1
     end
     
     #binding.pry
-    session[:time]=session[:time]-1
     session[:id]=session[:id]+1
     
     if(session[:id]>10)
       redirect_to results_index_path and return
     end
     
-    redirect_to query_path , notice: 'メッセージを保存しました'
+    redirect_to query_path
   end
     
   def timer
