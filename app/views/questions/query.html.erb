@@ -7,19 +7,24 @@
   <%= f.submit %>
 <% end %>
 
-残り時間：<%= session[:time] %>
+<body onLoad="countdown();">
+  <div id="target">時間表示領域</div>
+</body>
+
 問題ID：<%=session[:id]%>
 点数：<%=session[:score]%>
 
 <script>
-  var count = 10;
-  var countdown = function(){
-    console.log(count--);
-  } 
-  
-  var id = setInterval(function(){
-    countdown();
-    if(count < 0){　
-      clearInterval(id);　//idをclearIntervalで指定している．１秒ごとにsession[:time]を1減らすメソッドを呼び出したい
-    }}, 1000);
+var count=10;
+  function countdown() {
+    var ele = document.getElementById("target");
+    ele.innerHTML = count.toLocaleString();
+    count--;
+    if(count<0){
+      location.href="/results/index";
+    }
+    window.setTimeout(countdown, 1000);
+}
+
+
 </script>
