@@ -1,8 +1,5 @@
 英語に直しなさい<br/>
 <%= @question.jap%>
-<% if @question.reply?%>
- <%= @question.reply%>
-<% end%>
 
 <%= form_for(@question) do |f| %>
   答え:
@@ -19,6 +16,7 @@
   var countdown = function(){
     console.log(count--);
   } 
+  
   var id = setInterval(function(){
     countdown();
     if(count < 0){　

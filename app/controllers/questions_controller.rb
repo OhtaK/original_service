@@ -2,12 +2,12 @@ class QuestionsController < ApplicationController
   include QuestionsHelper
   
   def index
+    session[:time]=10
+    session[:id]=1
+    session[:score]=0
   end
   
   def query
-    session[:time] ||=10
-    session[:id] ||=1
-    session[:score] ||=0
     @question= Question.find(params[:id]=session[:id])
   end
   
@@ -24,10 +24,7 @@ class QuestionsController < ApplicationController
     session[:id]=session[:id]+1
     
     if(session[:id]>10)
-      session[:time]=10
-      session[:id]=1
-      session[:score]=0
-      redirect_to root_path and return
+      redirect_to results_index_path and return
     end
     
     redirect_to query_path , notice: 'メッセージを保存しました'

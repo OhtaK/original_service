@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'results/index'
+
   root 'questions#index'
   
   get 'query',  to: 'questions#query'
