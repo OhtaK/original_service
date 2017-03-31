@@ -2,8 +2,8 @@ class QuestionsController < ApplicationController
   include QuestionsHelper
   
   def index
-    session[:id]=1
-    session[:score]=0
+    session[:id] ||=1
+    session[:score] ||=0
   end
   
   def query
