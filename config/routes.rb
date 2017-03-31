@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'top#index'
   
-  get 'query',  to: 'question#query'
+  get 'query',  to: 'questions#query'
   
-  resources :question
+  resources :questions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

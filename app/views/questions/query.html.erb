@@ -1,0 +1,11 @@
+<%= @question.jap%>
+<%= @question.eng%>
+<% if @question.reply?%>
+ <%= @question.reply%>
+<% end%>
+
+<%= form_for(@question) do |f| %>
+  答え:
+  <%= f.text_field :reply %>
+  <%= f.submit %>
+<% end %>
