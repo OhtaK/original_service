@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'top#index'
+  root 'questions#index'
   
   get 'query',  to: 'questions#query'
   

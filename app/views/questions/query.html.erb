@@ -9,3 +9,18 @@
   <%= f.text_field :reply %>
   <%= f.submit %>
 <% end %>
+
+残り時間：<%= @time %>
+
+<script>
+  var count = 10;
+  var countdown = function(){
+    console.log(count--);
+  } 
+  var id = setInterval(function(){
+    countdown();
+    if(count < 0){　
+      clearInterval(id);　//idをclearIntervalで指定している
+    }}, 1000);
+</script>
+
