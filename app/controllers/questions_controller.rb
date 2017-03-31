@@ -7,28 +7,38 @@ class QuestionsController < ApplicationController
   def query
     session[:time] ||=10
     session[:id] ||=1
+    session[:score] ||=0
     @question= Question.find(params[:id]=session[:id])
   end
   
-    def update
-        #@question=Question.find(params[:id]=1)
-        #@question.reply=question_params.reply
-        #@id=1
-        #@question=current_question
-        #@id=current_question.id
-        #@id=@id+1
-        
-        session[:time]=session[:time]-1
-        session[:id]=session[:id]+1
-        redirect_to query_path , notice: 'メッセージを保存しました'
+  def update
+    @question=Question.find(params[:id]=session[:id])
+    @reply=question_params[:reply]
+    #binding.pry
+    if @reply==@question.eng
+      session[:score]=session[:score]+1
     end
     
-    def timer
-      @time=5
+    #binding.pry
+    session[:time]=session[:time]-1
+    session[:id]=session[:id]+1
+    
+    if(session[:id]>10)
+      session[:time]=10
+      session[:id]=1
+      session[:score]=0
+      redirect_to root_path and return
     end
     
-    private
-    def question_params
-        params.require(:question).permit(:reply)
-    end
+    redirect_to query_path , notice: 'メッセージを保存しました'
+  end
+    
+  def timer
+    @time=5
+  end
+  
+  private
+  def question_params
+      params.require(:question).permit(:reply)
+  end
 end

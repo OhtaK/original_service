@@ -1,5 +1,5 @@
+英語に直しなさい<br/>
 <%= @question.jap%>
-<%= @question.eng%>
 <% if @question.reply?%>
  <%= @question.reply%>
 <% end%>
@@ -12,6 +12,7 @@
 
 残り時間：<%= session[:time] %>
 問題ID：<%=session[:id]%>
+点数：<%=session[:score]%>
 
 <script>
   var count = 10;
@@ -21,6 +22,6 @@
   var id = setInterval(function(){
     countdown();
     if(count < 0){　
-      clearInterval(id);　//idをclearIntervalで指定している
+      clearInterval(id);　//idをclearIntervalで指定している．１秒ごとにsession[:time]を1減らすメソッドを呼び出したい
     }}, 1000);
 </script>
