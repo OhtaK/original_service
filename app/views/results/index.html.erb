@@ -1,7 +1,18 @@
 <link rel="stylesheet" href="top.scss">
+<div class="center">
 <div class="titles">
-    <div class="center">
-        あなたの点数は<%=session[:score]%>点です！
+    
+        <% if session[:id]!=10%>
+            <% session[:isTimeOut]=1%>
+        <%end%>
+        あなたの点数は<%=session[:score]%>点です！</br>
+        </div>
+        正解はこちら↓</br>
+        
+        <% @question.each do |question| %>
+            <%= question.jap%>: 
+            <%=question.eng%></br>
+        <% end %>
+        
         <a href= / class="button">End!</a>
-    </div>
 </div>

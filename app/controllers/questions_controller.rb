@@ -2,8 +2,11 @@ class QuestionsController < ApplicationController
   include QuestionsHelper
   
   def index
-    session[:id] ||=1
-    session[:score] ||=0
+    if(session[:id]>10 || session[:isTimeOut]==1)
+      session[:id] =1
+      session[:score] =0
+      session[:isTimeOut]=0
+    end
   end
   
   def query
@@ -29,10 +32,6 @@ class QuestionsController < ApplicationController
     redirect_to query_path
   end
     
-  def timer
-    @time=5
-  end
-  
   private
   def question_params
       params.require(:question).permit(:reply)

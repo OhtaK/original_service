@@ -6,6 +6,7 @@
   <div class="question_english">
     <%= @question.jap%>
   </div>
+  
 <%= form_for(@question) do |f| %>
   答え:
   <%= f.text_field :reply %>
@@ -13,9 +14,10 @@
 <% end %>
 
 問題ID：<%=session[:id]%>
-点数：<%=session[:score]%>
+点数：<%=session[:score]%></br>
 
   <body onLoad="countdown();">
+    <%= image_tag 'tokei.jpg', :size => '30x30'%>
     <div id="target"></div>
   </body>
 </div>
