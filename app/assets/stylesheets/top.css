@@ -1,0 +1,24 @@
+.titles {
+  font-size: 3em; }
+
+.center {
+  text-align: center; }
+
+.button {
+  width: 200px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0 10px;
+  text-align: center;
+  box-shadow: 2px 2px #555;
+  color: #333;
+  color: #fff;
+  background-color: #2EFE2E;
+  border-radius: 10px; }
+
+body {
+  background-color: #A9F5F2; }
+
+/*# sourceMappingURL=top.css.map */

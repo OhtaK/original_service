@@ -2,6 +2,10 @@ class QuestionsController < ApplicationController
   include QuestionsHelper
   
   def index
+    session[:id] ||=1
+      session[:score] ||=0
+      session[:isTimeOut]||=0
+      
     if(session[:id]>10 || session[:isTimeOut]==1)
       session[:id] =1
       session[:score] =0

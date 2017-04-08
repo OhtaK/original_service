@@ -9,6 +9,7 @@
   text-align: center;
 }
 
+
 .button{
     width:200px;
     font-size:24px;
@@ -20,6 +21,15 @@
     box-shadow:2px 2px #555;
     color:#333;
     color:#fff;
-    background-color:#49a9d4;
+    background-color:#2EFE2E;
     border-radius:10px;
+}
+
+body{
+    background-color:#A9F5F2;
+}
+
+.right {
+    width: 200px;
+    margin-right: auto;
 }
