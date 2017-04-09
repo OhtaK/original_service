@@ -1,0 +1,5 @@
+create
+<% @histories.each do |history| %>
+            <%= history.score%>: 
+            <%=history.updated_at%></br>
+        <% end %>

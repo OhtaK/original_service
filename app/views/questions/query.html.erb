@@ -28,8 +28,9 @@ var count=10;
     var ele = document.getElementById("target");
     ele.innerHTML = count.toLocaleString();
     count--;
-    if(count<0){
+    if(count==0){
       location.href="/results/index";
+      count=0;
     }
     window.setTimeout(countdown, 1000);
 }
