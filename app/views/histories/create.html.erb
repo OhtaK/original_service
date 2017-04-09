@@ -1,5 +1,12 @@
-create
+<link rel="stylesheet" href="top.scss">
+<div class="center">
+    <font size="5">
+過去の成績</br>
+<%= image_tag 'history.jpg', :size => '100x100' %></br>
+日付：点数</br>
 <% @histories.each do |history| %>
-            <%= history.score%>: 
-            <%=history.updated_at%></br>
-        <% end %>
+    <%=history.updated_at%>: 
+    <%= history.score%>点</br>
+<% end %>
+</font>
+</div>

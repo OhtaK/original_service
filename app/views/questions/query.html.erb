@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="questions.scss">
 <div class="center">
-  <div class="question_japanese">
+  <font size="5">
     英語に直しなさい<br/>
-  </div>
+    第<%=session[:id]%>問</br>
+  </font>
   <div class="question_english">
     <%= @question.jap%>
   </div>
@@ -13,12 +14,9 @@
   <%= f.submit %>
 <% end %>
 
-問題ID：<%=session[:id]%>
-点数：<%=session[:score]%></br>
-
   <body onLoad="countdown();">
     <%= image_tag 'tokei.jpg', :size => '30x30'%>
-    <div id="target"></div>
+    <div id="target"><font size="5"></font></div>
   </body>
 </div>
 

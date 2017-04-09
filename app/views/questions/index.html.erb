@@ -3,18 +3,18 @@
     <div class="titles">
         <h1>Sec. Words</h1>
     </div>
+    <font size="5">
     <% if logged_in? %>
-    <div class="name">
-    <%= current_user.name %>
-              <li>
-                  <%= link_to "過去の成績", histories_path, method: "index" %>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-        </div>
-        <%= image_tag 'top.PNG' %>
+            name:<%= current_user.name %>
+        <li>
+            <%= link_to "過去の成績", histories_path, method: "index" %>
+            <%= link_to "Log out", logout_path, method: "delete" %>
+        </li>
+    <% else %>
+         <li><%= link_to "Log in", login_path %></li>
+    <% end %>
+    </font>
+    <%= image_tag 'top.PNG' %>
     <div data-no-turbolink>
         <a href= query class="button">Start!</a>
     </div>
